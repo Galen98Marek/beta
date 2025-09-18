@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMArena Bridge - Panel de Administración</title>
+    <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Panel de Login -->
+        <div id="loginPanel" class="panel">
+            <div class="login-form">
+                <h1>LMArena Bridge</h1>
+                <h2>Panel de Administración</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+                <div id="loginError" class="error-message" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Panel Principal -->
+        <div id="mainPanel" class="panel" style="display: none;">
+            <header class="header">
+                <h1>Panel de Administración - LMArena Bridge</h1>
+                <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
+            </header>
+
+            <!-- Dashboard -->
+            <div class="dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total API Keys</h3>
+                        <span id="totalKeys" class="stat-number">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Keys Activas</h3>
+                        <span id="activeKeys" class="stat-number">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Usos</h3>
+                        <span id="totalUsage" class="stat-number">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Modelos Disponibles</h3>
+                        <span id="totalModels" class="stat-number">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operaciones Masivas -->
+            <div class="bulk-operations">
+                <h3>Operaciones Masivas</h3>
+                <div class="bulk-form">
+                    <div class="form-group">
+                        <label for="bulkModelSelect">Agregar modelo a todas las API Keys:</label>
+                        <select id="bulkModelSelect" class="form-control">
+                            <option value="">Seleccionar modelo...</option>
+                        </select>
+                    </div>
+                    <button id="bulkAddModelBtn" class="btn btn-warning">Aplicar a Todas las Keys</button>
+                </div>
+            </div>
+
+            <!-- Filtros Avanzados -->
+            <div class="filters-section">
+                <h3>Filtros</h3>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="nameFilter">Nombre/ID:</label>
+                        <input type="text" id="nameFilter" placeholder="Buscar por nombre o ID...">
+                    </div>
+                    <div class="filter-group">
+                        <label for="statusFilter">Estado:</label>
+                        <select id="statusFilter">
+                            <option value="all">Todas</option>
+                            <option value="active">Activas</option>
+                            <option value="disabled">Deshabilitadas</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="usageMinFilter">Usos mínimos:</label>
+                        <input type="number" id="usageMinFilter" min="0" placeholder="0">
+                    </div>
+                    <div class="filter-group">
+                        <label for="usageMaxFilter">Usos máximos:</label>
+                        <input type="number" id="usageMaxFilter" min="0" placeholder="Sin límite">
+                    </div>
+                    <div class="filter-group">
+                        <label for="modelsFilter">Modelos (separados por coma):</label>
+                        <input type="text" id="modelsFilter" placeholder="claude-3-5-sonnet-20241022, gpt-4...">
+                    </div>
+                    <div class="filter-actions">
+                        <button id="applyFiltersBtn" class="btn btn-secondary">Aplicar Filtros</button>
+                        <button id="clearFiltersBtn" class="btn btn-outline">Limpiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles -->
+            <div class="controls">
+                <button id="createKeyBtn" class="btn btn-primary">Crear Nueva API Key</button>
+                <button id="refreshBtn" class="btn btn-secondary">Actualizar</button>
+            </div>
+
+            <!-- Tabla de API Keys -->
+            <div class="table-container">
+                <div class="table-info">
+                    <span id="tableInfo">Mostrando 0 de 0 API Keys</span>
+                </div>
+                <table id="keysTable" class="keys-table">
+                    <thead>
+                        <tr>
+                            <th>ID/Nombre</th>
+                            <th>Descripción</th>
+                            <th>Usos</th>
+                            <th>Estado</th>
+                            <th>Modelos</th>
+                            <th>Creada</th>
+                            <th>Último Uso</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="keysTableBody">
+                        <!-- Las filas se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination-container">
+                <div class="pagination-info">
+                    <span id="paginationInfo">Página 1 de 1</span>
+                </div>
+                <div class="pagination-controls">
+                    <button id="prevPageBtn" class="btn btn-outline" disabled>Anterior</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextPageBtn" class="btn btn-outline" disabled>Siguiente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para Crear/Editar API Key -->
+        <div id="keyModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Crear Nueva API Key</h3>
+                    <span class="close" id="closeModal">&times;</span>
+                </div>
+                <form id="keyForm">
+                    <div class="form-group">
+                        <label for="keyName">Nombre (opcional):</label>
+                        <input type="text" id="keyName" name="name" placeholder="Ej: API Key de Desarrollo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="keyDescription">Descripción (opcional):</label>
+                        <textarea id="keyDescription" name="description" placeholder="Ej: Key para el equipo de desarrollo"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="keyLimit">Límite de Usos (opcional):</label>
+                        <input type="number" id="keyLimit" name="limit" min="1" placeholder="Dejar vacío para ilimitado">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Modelos Permitidos:</label>
+                        <div id="modelsCheckboxes" class="models-grid">
+                            <!-- Los checkboxes se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" id="cancelBtn" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de Confirmación -->
+        <div id="confirmModal" class="modal" style="display: none;">
+            <div class="modal-content confirm-modal">
+                <div class="modal-header">
+                    <h3>Confirmar Acción</h3>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmMessage">¿Estás seguro de que quieres realizar esta acción?</p>
+                </div>
+                <div class="form-actions">
+                    <button id="confirmBtn" class="btn btn-danger">Confirmar</button>
+                    <button id="cancelConfirmBtn" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <script src="/static/admin.js"></script>
+</body>
+</html>

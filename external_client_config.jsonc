@@ -1,0 +1,34 @@
+{
+  // --- Información del Cliente Externo ---
+  // ID único del cliente externo (debe coincidir con el registrado en el servidor principal)
+  "client_id": "adriclient01",
+  
+  // Nombre descriptivo del cliente
+  "client_name": "Cliente Externo - Casa",
+  
+  // API Key para autenticarse con el servidor principal
+  // IMPORTANTE: Debe coincidir con la configurada en el servidor principal
+  "api_key": "0414adri0414",
+  
+  // --- Configuración de Sesión ---
+  // IDs de sesión globales (se actualizan con external_id_updater.py)  
+  "session_id": "de84570e-eea7-4e72-b5c0-90a54216efff",
+  "message_id": "2c8ec97b-9974-4de2-bd17-1ffc3e167110",
+  
+  // --- Configuración de Puertos ---
+  // Puerto donde corre este servidor de cliente externo
+  "port": 5104,
+  
+  // Puerto del WebSocket para el script de Tampermonkey local
+  "tampermonkey_ws_port": 5105,
+  
+  // Puerto del id_updater para este cliente
+  "id_updater_port": 5106,
+  
+  // --- Configuración de Timeouts ---
+  // Timeout para respuestas de streaming (segundos)
+  "stream_response_timeout_seconds": 360,
+  
+  // --- Configuración de Logging ---
+  "log_level": "INFO"
+}

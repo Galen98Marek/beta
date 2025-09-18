@@ -1,0 +1,121 @@
+{
+  "o3-2025-04-16": {
+    "session_id0": "b2096d33-2651-4802-97c1-c9b788c01c7a",
+    "message_id0": "151968ec-b43f-4d0b-a655-e508156af578",
+    "session_id1": "session_for_battle_A",
+    "message_id1": "message_for_battle_A",
+    "session_id2": "session_for_battle_B",
+    "message_id2": "message_for_battle_B",
+    "mode": "direct_chat",
+    "current_index": 0
+  },
+  "claude-3-7-sonnet-20250219": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "4f361a46-fefc-4751-bef8-1417b4ed50ab",
+    "message_id0": "6b9836d5-c1d6-430d-ad0e-e006ecebc9df"
+  },
+  "gpt-4.1-2025-04-14": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "30474ec2-f514-4dfc-a4df-0c3c8ce6c945",
+    "message_id0": "f3badc60-0317-4e20-a27c-ec4fb3250031"
+  },
+  "claude-sonnet-4-20250514": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "72007a7d-8662-4c32-9516-99b68b1dbf41",
+    "message_id0": "29c3f9c8-514e-4f76-a19a-58d04c0dd317"
+  },
+  "claude-opus-4-20250514": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "140b420e-123d-4d0a-b7e7-a3e8c4439d0d",
+    "message_id0": "7a136aab-f8c0-4afe-89d0-7ad701c65908"
+  },
+  "gemini-2.5-pro": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "d46f83ab-9ad0-4c5a-8499-645f04fd201e",
+    "message_id0": "4d2e47a6-652b-43d9-9d27-03fc26daf525"
+  },
+  "claude-3-5-sonnet-20241022": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "71749b10-3c2d-4a43-9554-bd9d59e380ca",
+    "message_id0": "56145ecf-8e15-4e24-8efa-d7ed7b98baac"
+  },
+  "chatgpt-4o-latest-20250326": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "0d0d5e93-c704-4652-b53f-34845a6b0e6e",
+    "message_id0": "8db334a6-2fa7-4df3-834e-b65ab56bf44f"
+  },
+  "kimi-k2-0711-preview": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "96b84308-3703-45ef-90af-1596f67f2dae",
+    "message_id0": "198da032-d349-4760-833a-500250c74681"
+  },
+  "grok-4-0709": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "3b242aef-0740-461f-94e4-b6263d02687f",
+    "message_id0": "0121799a-0130-4129-b5c9-4199d6236b39"
+  },
+  "deepseek-r1-0528": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "f99f7402-5e84-4cd2-a20b-01f9379d3093",
+    "message_id0": "67105a95-eca0-46a2-ac2c-879e06ddda90"
+  },
+  "claude-opus-4-20250514-thinking-16k": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "5f7573f5-6ecb-40de-a59d-0530a4186bf8",
+    "message_id0": "e4cbd412-0b32-4ce7-ba09-d571df9cbea1"
+  },
+  "gpt-5": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "c1704400-a2a0-4b49-9676-c7c41c2eedb8",
+    "message_id0": "f2f1c3cc-1cb3-4618-b14c-66d0c78e60cf"
+  },
+  "gpt-5-mini": {
+    "session_id0": "d5180c6b-4a37-4137-b78e-fc3591bd1e3e",
+    "message_id0": "77eed7b6-4474-48f8-ab7f-4d748164182d",
+    "mode": "direct_chat",
+    "current_index": 0
+  },
+  "gpt-5-nano": {
+    "session_id0": "7845fded-54fc-462e-a931-38c15ea4576a",
+    "message_id0": "d9273c71-152c-45d5-9971-57e5adf8dddb",
+    "mode": "direct_chat",
+    "current_index": 0
+  },
+  "gpt-5-chat": {
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id0": "b0dd7062-4359-47be-8f3a-019fa0d609b1",
+    "message_id0": "fa94ca03-1533-4901-9150-4d1bfb3042d5"
+  },
+  "claude-opus-4-1-20250805": {
+    "session_id0": "5a30c46b-1eae-4f8e-9248-a32416661a87",
+    "message_id0": "3b9cfc33-17aa-42c5-b415-8df5aa8a9b3b",
+    "mode": "direct_chat",
+    "current_index": 0,
+    "session_id1": "5a30c46b-1eae-4f8e-9248-a32416661a87",
+    "message_id1": "3b9cfc33-17aa-42c5-b415-8df5aa8a9b3b"
+  },
+  "claude-opus-4-1-20250805-thinking-16k": {
+    "session_id0": "d42f72af-9a77-43a1-80f2-e9dcb34d2c6b",
+    "message_id0": "bca43f38-759d-442e-bfce-c076b30debb4",
+    "mode": "direct_chat",
+    "current_index": 0
+  },
+  "auto-claude": {
+    "mode": "dynamic",
+    "current_model": "claude-opus-4-1-20250805-thinking-16k",
+    "note": "This is managed automatically by the auto-claude system"
+  }
+}
